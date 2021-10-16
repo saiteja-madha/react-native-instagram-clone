@@ -31,16 +31,15 @@ export default FormikPostUploader = ({ navigation }) => {
 
       snapshot.forEach(async (targetDoc) => {
         // check if chat already exists
-
+        //TODO: Better implementation
         try {
-          const exists = await db
-            .collection("chats")
-            .where("members", "array-contains", targetDoc.data().email)
-            .where("members", "array-contains", firebase.auth().currentUser.email)
-            .limit(1)
-            .get();
+          let exists = false;
+          for (let chatId of currentUser.conversations) {
+            const doc = await db.collection("chats").doc(chatId).get();
+            if (doc.data().members.includes(targetDoc.data().email)) exists = true;
+          }
 
-          if (!exists.empty) {
+          if (exists) {
             Alert.alert("Oops!", "A conversation already exists with this user");
             return;
           }
