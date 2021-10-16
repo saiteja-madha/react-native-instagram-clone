@@ -29,6 +29,7 @@ export default SignupForm = ({ navigation }) => {
           owner_uid: authUser.user.uid,
           username,
           email: authUser.user.email,
+          conversations: [],
           profile_picture: await getRandomProfilePicture(),
         });
 

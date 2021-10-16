@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { StyleSheet, Platform, SafeAreaView, ScrollView } from "react-native";
+import { StatusBar } from "expo-status-bar";
 import BottomTabs, { bottomTabIcons } from "../components/home/BottomTabs";
 import Header from "../components/home/Header";
 import Post from "../components/home/Post";
@@ -24,6 +25,7 @@ export default HomeScreen = ({ navigation }) => {
 
   return (
     <SafeAreaView style={styles.container}>
+      <StatusBar style="light" />
       <Header navigation={navigation} />
       <Stories />
       <ScrollView>

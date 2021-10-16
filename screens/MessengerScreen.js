@@ -1,18 +1,43 @@
-import React from "react";
-import { StyleSheet, Platform, SafeAreaView, ScrollView } from "react-native";
-import Chat from "../components/chat/Chat";
-import Header from "../components/chat/Header";
-import Tabs from "../components/chat/Tabs";
-import { CHATS } from "../data/chats";
+import React, { useEffect, useState } from "react";
+import { StyleSheet, Platform, SafeAreaView, ScrollView, TouchableOpacity } from "react-native";
+import Chat from "../components/messenger/Chat";
+import Header from "../components/messenger/Header";
+import Tabs from "../components/messenger/Tabs";
+import { firebase, db } from "../firebase";
 
 export default MessengerScreen = ({ navigation }) => {
+  const [currentUser, setCurrentUser] = useState(null);
+  const [conversations, setConversations] = useState([]);
+
+  useEffect(
+    () =>
+      db
+        .collection("users")
+        .doc(firebase.auth().currentUser.email)
+        .onSnapshot((snap) => setCurrentUser(snap.data())),
+    []
+  );
+
+  useEffect(
+    () =>
+      db
+        .collection("users")
+        .doc(currentUser?.email)
+        .onSnapshot((snapshot) => {
+          setConversations(snapshot.data()?.conversations);
+        }),
+    [currentUser]
+  );
+
   return (
     <SafeAreaView style={styles.container}>
       <Header navigation={navigation} />
       <Tabs />
       <ScrollView>
-        {CHATS.map((chat, index) => (
-          <Chat key={index} chat={chat} navigation={navigation} />
+        {conversations?.map((chatId, index) => (
+          <TouchableOpacity key={index} onPress={() => navigation.navigate("ChatScreen", { chatId })}>
+            <Chat navigation={navigation} chatId={chatId} />
+          </TouchableOpacity>
         ))}
       </ScrollView>
     </SafeAreaView>

@@ -24,7 +24,7 @@ export default Header = ({ navigation }) => {
       </View>
       <View style={styles.rightContainer}>
         <Image style={styles.icon} source={require("../../assets/icons/video.png")} />
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.push("NewChatScreen")}>
           <Image style={styles.icon} source={require("../../assets/icons/create.png")} />
         </TouchableOpacity>
       </View>
