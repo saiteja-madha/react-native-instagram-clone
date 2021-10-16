@@ -42,3 +42,11 @@ This project can be run from a web browser or the Expo client app. You may find 
 - Learn more about [Universal React](https://docs.expo.dev/).
 - See what API and components are [available in the React runtimes](https://docs.expo.dev/versions/latest/).
 - Find out more about developing apps and websites: [Guides](https://docs.expo.dev/guides/).
+
+## Screenshots
+
+| | | |
+|:-------------------------:|:-------------------------:|:-------------------------:|
+|<img width="1604" alt="screenshot" src="https://raw.githubusercontent.com/saiteja-madha/react-native-instagram-clone/master/screenshots/login.png">  Login | <img width="1604" alt="screenshot" src="https://raw.githubusercontent.com/saiteja-madha/react-native-instagram-clone/master/screenshots/register.png"> Register |<img width="1604" alt="screenshot" src="https://raw.githubusercontent.com/saiteja-madha/react-native-instagram-clone/master/screenshots/home-screen.png"> Home Screen |
+|<img width="1604" alt="screenshot" src="https://raw.githubusercontent.com/saiteja-madha/react-native-instagram-clone/master/screenshots/home-screen-likes.png"> Dynamic Likes | <img width="1604" alt="screenshot" src="https://raw.githubusercontent.com/saiteja-madha/react-native-instagram-clone/master/screenshots/new-post.png"> New Post |<img width="1604" alt="screenshot" src="https://raw.githubusercontent.com/saiteja-madha/react-native-instagram-clone/master/screenshots/new-post-update.png"> New Post Update |
+|<img width="1604" alt="screenshot" src="https://raw.githubusercontent.com/saiteja-madha/react-native-instagram-clone/master/screenshots/realtime-conversations.png"> Conversations | <img width="1604" alt="screenshot" src="https://raw.githubusercontent.com/saiteja-madha/react-native-instagram-clone/master/screenshots/start-new-conversation.png"> Start New Conversation|<img width="1604" alt="screenshot" src="https://raw.githubusercontent.com/saiteja-madha/react-native-instagram-clone/master/screenshots/realtime-chat.png"> Realtime Chat|
